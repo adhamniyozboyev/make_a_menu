@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     home: MyApp(),
   ));
 }
@@ -35,7 +36,6 @@ class _MyAppState extends State<MyApp> {
     '⊙ 10 min  ⊙3  §500 kcal',
     '⊙ 20 min  ⊙4  §725 kcal',
     '⊙ 15 min  ⊙4  §550 kcal',
-
   ];
   List foodsName = [
     'Chicken ',
@@ -51,12 +51,14 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(title: Center(child: Text('Menu'))),
         body: ListView.builder(
             itemCount: foodsName.length,
             itemBuilder: ((context, index) {
               return Padding(
-                padding: EdgeInsets.only(top: 17),
+                padding: EdgeInsets.only(top: 10),
                 child: ListTile(
+                    onLongPress: () {},
                     subtitle: Text(prices[index]),
                     leading: CircleAvatar(
                       backgroundImage:
