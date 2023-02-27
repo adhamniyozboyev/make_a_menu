@@ -15,17 +15,6 @@ class MyApp extends StatefulWidget {
 }
 
 class _MyAppState extends State<MyApp> {
-  List<Widget> buttons = [
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
-    IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
-  ];
   List prices = [
     '⊙ 15 min  ⊙3  §715 kcal',
     '⊙ 1 min  ⊙4  §600 kcal',
@@ -50,15 +39,28 @@ class _MyAppState extends State<MyApp> {
   ];
   @override
   Widget build(BuildContext context) {
+    List<Widget> buttons = [
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios)),
+      IconButton(onPressed: () {}, icon: Icon(Icons.arrow_forward_ios))
+    ];
     return Scaffold(
-        appBar: AppBar(title: Center(child: Text('Menu'))),
+        appBar: AppBar(
+            title: Center(
+          child: Text('Menu'),
+        )),
         body: ListView.builder(
             itemCount: foodsName.length,
             itemBuilder: ((context, index) {
               return Padding(
                 padding: EdgeInsets.only(top: 10),
                 child: ListTile(
-                    onLongPress: () {},
                     subtitle: Text(prices[index]),
                     leading: CircleAvatar(
                       backgroundImage:
